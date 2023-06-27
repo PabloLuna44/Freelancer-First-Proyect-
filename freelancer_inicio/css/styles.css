@@ -1,0 +1,320 @@
+:root{
+
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario:rgba(255,193,7,1); /*Es uan paleta de colores */
+    --secundario: #0097a7;        /*Se utiliza para tener los colores que vamos a utilizar*/
+    --gris: #757575;
+    --grisClaro: #dfe9f3;
+    
+    --fuente_principal: 3.8rem;
+}
+
+
+html{
+ font-size:62.5%;/*Es para establecer el tamaño de la fuente de la pagina*/
+ box-sizing: border-box;/*Hack para Box Model*/
+ scroll-snap-type: y mandatory;/*Es utilizado para desplazar la pagina web en el eje de la y*/
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+body{
+ font-size:16px;/*1 rem = 10px*/
+ font-family: 'Krub', sans-serif;/*Es para establecer la fuente del tipo de texto*/
+ background-image: linear-gradient(to top,var(--grisClaro) 0%,var(--blanco)100%);/*Para hacer degradados en el fondo de la pagina*/
+}
+
+.sombra{
+  -webkit-box-shadow: 0px 5px 15px -1px rgba(0,0,0,0.52); /*Para crear una parte sombredada en el main de la pagina  esto fue con box shadow*/
+  -moz-box-shadow: 0px 5px 15px -1px rgba(0,0,0,0.52);
+  box-shadow: 0px 5px 15px -1px rgba(0,0,0,0.52);
+  background-color: var(--blanco);
+  padding: 2rem;
+  border-radius: 2rem;
+}
+
+/*Tipografia*/
+h1{
+font-size: 3.8;
+}
+h2{
+font-size: 2.8;
+}
+h3{
+font-size: 1.8;
+}
+
+h1,h2,h3{
+
+  text-align: center;
+}
+
+
+/*Titulos*/
+.titulo{
+ text-align:center;  /*Para alinear los parrafos que deseemos*/
+ font: size 3.8rem;
+}
+
+.titulo span{
+ font-size: 2rem; /*Para etsbalcere el tamaño de fuente del span*/
+}
+   
+.contenedor{
+  max-width: 120rem;
+  margin: 0 auto; /*Para el tamaño del margen del conenedor */
+}
+/*Utilidades*/
+.W-100{
+  width: 100%;
+}
+@media (min-width: 768px){
+ .W-100{
+
+   width: auto;
+ }
+    
+}
+
+.flex{
+  display: flex;
+}
+
+.alinear-derecha{
+  justify-content: flex-end;
+
+}
+
+/*Navegacion Principal*/
+.nav-bg{
+ background-color: var(--secundario); /*Para establecer el color de fondo de la barra de navegacion*/
+}
+
+.navegacion_principal{        
+ display: flex; /*Es para utilizar la herramienta de Flexbox*/
+ flex-direction: column;
+ justify-content: space-between; /*Se utiliza para mantener un espacio en cada dato en la barra de navegacion*/
+}
+
+@media (min-width: 768px){
+    .navegacion_principal{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navegacion_principal a{
+    display: block;
+    color: var(--blanco);  /*para establecer el color del texto dentro de la barra de navegacion*/
+    text-align: center;
+    text-decoration:none; /*Para mostar un tipo de subrayada en la infomacion detro de la bara de navegacion*/
+   font-size:2rem;
+   font-weight: 700;
+   padding: 1rem;
+}
+
+.navegacion_principal a:hover,
+.enviar .boton:hover,
+.contenido-hero a:hover{
+  background-color: var(--primario);
+  color: var(--oscuro);
+}
+
+
+/*Hero*/
+.hero{
+
+    background-image: url(../img/hero.jpg);/*Para agregar una imagen*/
+    background-repeat: no-repeat;/*para no repetir una imagen cuando se expanda la pagina*/
+    background-size:cover ;
+    height: 450px; /*altura de la imagen*/
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+
+.contenido-hero{
+position: absolute;
+background-color: rgba(0, 0, 0, 0.514);/*Anterior*/
+background-color: rbg(0,0,0/50%);/*Para dar color difuminado*/
+width: 100%;
+height: 100%;
+
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.contenido-hero h2,.contenido-hero p{
+color: var(--blanco);
+}
+
+
+@media (min-width: 768px){
+  .servicios
+  ,.navegacion_principal
+  ,.formulario{
+  
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  
+  }    
+}
+
+
+.ubicacion{
+
+display: flex;
+align-items: flex-end;
+
+}
+
+
+
+.boton{
+
+  background-color: var(--secundario);
+  color: var(--blanco);
+  padding: 1rem 3rem;
+  margin-top: 1rem;
+  font-size: 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: .5rem;
+  text-align: center;
+  border: none;
+}
+
+@media (min-width: 480px){
+    .boton{
+      width: auto;
+    }
+}
+
+.boton :hover{
+  cursor: pointer;
+}
+
+
+
+@media (min-width: 768px){
+    
+.servicios{
+
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  column-gap: 1rem;
+
+  /*grid-template-columns: 300px 300px 300px;Para crear columnas en el area establecida en este caso en servicios 
+  grid-template-rows: 200px 100px;*/
+
+  /* grid:200px 100px/ 300px 300px 300px Equivale a lo mismo de arriba*/
+}
+
+}
+
+.servicio{
+
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.servicio h3{
+color: var(--secundario);
+font-weight: normal;
+}
+
+.servicio p{
+
+ line-height: 2; 
+
+}
+
+.iconos{
+
+height: 15rem;
+width: 15rem;
+background-color: var(--primario);
+border-radius: 50%;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+}
+
+.formulario{
+background-color: var(--gris);
+width: mim(60rem, 100%);/*Utiliza el valor mas pequeño*/
+margin: 0% auto;/*Se utiliza mas en elemntos que son formularios cuyo padre no es un dysplay:flex: ;*/
+padding: 2rem;
+border-radius: 2rem;
+}
+
+.formulario fieldset{
+
+border:none;
+
+}
+
+.formulario legend{
+
+text-align: center;
+font-size: 1.8rem;
+text-transform: uppercase;
+font-weight: 700;
+margin-bottom: 2rem;
+color: var(--primario)
+
+}
+
+@media (min-width: 768px){
+  
+  .contenedor-de-campos{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: auto auto 20rem;
+    column-gap: 1rem;  
+}
+
+.campos:nth-child(3),
+.campos:nth-child(4){
+grid-column: 1/3;
+}
+
+
+}
+
+.campo{
+
+margin-bottom: 2rem;
+}
+
+.campo label{
+color:var(--blanco);
+font-weight: bold;          
+margin-bottom: .5rem;
+display: block;
+}
+
+.input-text{
+  width: 100%;
+  border: none;       /*Esta area es para establecer el margen y borde de los inputs*/
+  padding: 1.5rem;
+  border-radius: .5rem;
+}
+
+
+
+.final{
+text-align: center;/*Para alinear el texto de todos los derechos resevados*/
+}
+
+
+.campos textarea{
+height: 18rem; /*Para ampliar el area donde se escribe el mensaje */
+}
